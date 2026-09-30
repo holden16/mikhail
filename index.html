@@ -1,244 +1,525 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Михаил, фронтенд-разработчик: отклик на вакансию</title>
-<meta name="description" content="12 лет в веб-разработке. Готов помочь вашей команде с сайтом.">
-<meta property="og:title" content="Михаил, фронтенд-разработчик">
-<meta property="og:description" content="12 лет в веб-разработке. Готов помочь вашей команде с сайтом.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛷️</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #F3F6F9;
-    --ink: #14213D;
-    --muted: #56627A;
-    --line: #D3DDE8;
-    --red: #D62839;
-    --display: "Unbounded", "Arial Black", system-ui, sans-serif;
-    --body: "Onest", "Segoe UI", Roboto, system-ui, sans-serif;
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  @media (prefers-color-scheme: dark) {
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Михаил, фронтенд-разработчик: отклик на вакансию</title>
+  <meta name="description" content="12 лет в веб-разработке. Готов помочь вашей команде с сайтом.">
+  <meta property="og:title" content="Михаил, фронтенд-разработчик">
+  <meta property="og:description" content="12 лет в веб-разработке. Готов помочь вашей команде с сайтом.">
+  <meta property="og:type" content="website">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛷️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700;900&display=swap"
+    rel="stylesheet">
+  <style>
     :root {
-      --bg: #0F1A2E;
-      --ink: #E7EDF5;
-      --muted: #9DAAC0;
-      --line: #273651;
+      --bg: #F3F6F9;
+      --ink: #14213D;
+      --muted: #56627A;
+      --line: #D3DDE8;
+      --red: #D62839;
+      --display: "Unbounded", "Arial Black", system-ui, sans-serif;
+      --body: "Onest", "Segoe UI", Roboto, system-ui, sans-serif;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0F1A2E;
+        --ink: #E7EDF5;
+        --muted: #9DAAC0;
+        --line: #273651;
       }
-  }
-  *, *::before, *::after { box-sizing: inherit; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 400 1.0625rem/1.65 var(--body);
-  }
-  a { color: inherit; text-underline-offset: 3px; }
-  a:hover { color: var(--red); }
-  :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+    }
 
-  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    padding: 4rem 0 3.5rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2rem 2.5rem;
-    align-items: center;
-  }
-  .photo {
-    width: 9.5rem; height: 9.5rem;
-    border-radius: 50%;
-    overflow: hidden;
-    background: var(--line);
-    display: grid; place-items: center;
-    font: 700 3rem/1 var(--display);
-    color: var(--muted);
-  }
-  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  h1 {
-    font: 900 clamp(2.4rem, 7vw, 3.6rem)/1 var(--display);
-    margin: 0 0 .6rem;
-    letter-spacing: -.02em;
-  }
-  .lead { margin: 0; font-size: 1.2rem; color: var(--muted); max-width: 28rem; }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
 
-  /* Лыжня коньковым ходом */
-  .track { grid-column: 1 / -1; width: 100%; height: auto; display: block; overflow: visible; }
-  .track .ski { stroke: var(--muted); stroke-width: 3; stroke-linecap: round; fill: none; opacity: .55;
-    stroke-dasharray: 60; stroke-dashoffset: 60; animation: glide 260ms ease-out forwards; }
-  .track .pole { fill: var(--muted); opacity: 0; animation: plant 200ms ease-out forwards; }
-  .track .ski.last { stroke: var(--red); opacity: 1; }
-  @keyframes glide { to { stroke-dashoffset: 0; } }
-  @keyframes plant { to { opacity: .45; } }
-  @media (prefers-reduced-motion: reduce) {
-    .track .ski { animation: none; stroke-dashoffset: 0; }
-    .track .pole { animation: none; opacity: .45; }
-  }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 1.0625rem/1.65 var(--body);
+    }
 
-  /* ---------- Sections ---------- */
-  section { padding: 2.75rem 0; border-top: 1px solid var(--line); }
-  h2 { font: 700 1.5rem/1.2 var(--display); margin: 0 0 1.25rem; letter-spacing: -.01em; }
-  p { margin: 0 0 1rem; }
-  p:last-child { margin-bottom: 0; }
+    a {
+      color: inherit;
+      text-underline-offset: 3px;
+    }
 
-  .facts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.4rem; padding: 0; list-style: none; }
-  .facts li { border: 1px solid var(--line); border-radius: 999px; padding: .3rem .85rem; font-size: .95rem; }
+    a:hover {
+      color: var(--red);
+    }
 
-  .metro { display: inline-flex; align-items: baseline; gap: .3rem; white-space: nowrap; }
-  .metro-m { font: 700 .95em/1 var(--display); color: #0072BC; }
-  @media (prefers-color-scheme: dark) { .metro-m { color: #4DA3E0; } }
+    :focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
 
-  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
-  .gallery figure { margin: 0; }
-  .gallery img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; display: block; background: var(--line); }
-  .gallery figcaption { margin-top: .45rem; font-size: .9rem; color: var(--muted); }
+    .wrap {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-  /* Требования */
-  .legend { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; color: var(--muted); font-size: .92rem; margin: 0 0 1.5rem; }
-  .legend span { display: inline-flex; align-items: center; gap: .45rem; }
-  .req { list-style: none; margin: 0; padding: 0; }
-  .req li {
-    display: grid; grid-template-columns: 1.1rem 12rem 1fr; gap: .25rem 1rem;
-    padding: 1rem 0; border-bottom: 1px solid var(--line);
-  }
-  .req li:last-child { border-bottom: 0; }
-  .req b { font-weight: 600; }
-  .req .note { color: var(--muted); }
-  .dot { width: .8rem; height: .8rem; border-radius: 50%; margin-top: .42rem; flex: none; }
-  .d-strong { background: var(--ink); }
-  .d-exp    { background: linear-gradient(90deg, var(--ink) 50%, transparent 50%); border: 2px solid var(--ink); }
-  .d-learn  { border: 2px solid var(--ink); }
-  .d-weak   { border: 2px dashed var(--muted); }
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 4rem 0 3.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem 2.5rem;
+      align-items: center;
+    }
 
-  /* Формат и контакты */
-  .terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1.25rem; }
-  .terms div { border-left: 3px solid var(--red); padding-left: 1rem; }
-  .terms strong { display: block; font: 700 1.05rem/1.3 var(--display); margin-bottom: .2rem; }
-  .terms span { color: var(--muted); }
+    .photo {
+      width: 9.5rem;
+      height: 9.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--line);
+      display: grid;
+      place-items: center;
+      font: 700 3rem/1 var(--display);
+      color: var(--muted);
+    }
 
-  .contacts { list-style: none; margin: 0; padding: 0; font-size: 1.15rem; }
-  .contacts li { padding: .35rem 0; }
-  .contacts .k { color: var(--muted); display: inline-block; min-width: 6.5rem; }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
+    h1 {
+      font: 900 clamp(2.4rem, 7vw, 3.6rem)/1 var(--display);
+      margin: 0 0 .6rem;
+      letter-spacing: -.02em;
+    }
 
-  @media (max-width: 600px) {
-    .hero { grid-template-columns: 1fr; padding-top: 2.5rem; gap: 1.5rem; }
-    .photo { width: 7.5rem; height: 7.5rem; }
-    .req li { grid-template-columns: 1.1rem 1fr; }
-    .req .note { grid-column: 2; }
-  }
-</style>
+    .lead {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 28rem;
+    }
+
+    /* Лыжня коньковым ходом */
+    .track {
+      grid-column: 1 / -1;
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .track .ski {
+      stroke: var(--muted);
+      stroke-width: 3;
+      stroke-linecap: round;
+      fill: none;
+      opacity: .55;
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: glide 260ms ease-out forwards;
+    }
+
+    .track .pole {
+      fill: var(--muted);
+      opacity: 0;
+      animation: plant 200ms ease-out forwards;
+    }
+
+    .track .ski.last {
+      stroke: var(--red);
+      opacity: 1;
+    }
+
+    @keyframes glide {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes plant {
+      to {
+        opacity: .45;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .track .ski {
+        animation: none;
+        stroke-dashoffset: 0;
+      }
+
+      .track .pole {
+        animation: none;
+        opacity: .45;
+      }
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 2.75rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font: 700 1.5rem/1.2 var(--display);
+      margin: 0 0 1.25rem;
+      letter-spacing: -.01em;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 0 0 1.4rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .facts li {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .3rem .85rem;
+      font-size: .95rem;
+    }
+
+    .metro {
+      display: inline-flex;
+      align-items: baseline;
+      gap: .3rem;
+      white-space: nowrap;
+    }
+
+    .metro-m {
+      font: 700 .95em/1 var(--display);
+      color: #0072BC;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .metro-m {
+        color: #4DA3E0;
+      }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .gallery figure {
+      margin: 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      background: var(--line);
+    }
+
+    .gallery figcaption {
+      margin-top: .45rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    /* Требования */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.25rem;
+      color: var(--muted);
+      font-size: .92rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+    }
+
+    .req {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .req li {
+      display: grid;
+      grid-template-columns: 1.1rem 12rem 1fr;
+      gap: .25rem 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .req li:last-child {
+      border-bottom: 0;
+    }
+
+    .req b {
+      font-weight: 600;
+    }
+
+    .req .note {
+      color: var(--muted);
+    }
+
+    .dot {
+      width: .8rem;
+      height: .8rem;
+      border-radius: 50%;
+      margin-top: .42rem;
+      flex: none;
+    }
+
+    .d-strong {
+      background: var(--ink);
+    }
+
+    .d-exp {
+      background: linear-gradient(90deg, var(--ink) 50%, transparent 50%);
+      border: 2px solid var(--ink);
+    }
+
+    .d-learn {
+      border: 2px solid var(--ink);
+    }
+
+    .d-weak {
+      border: 2px dashed var(--muted);
+    }
+
+    /* Формат и контакты */
+    .terms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      gap: 1.25rem;
+    }
+
+    .terms div {
+      border-left: 3px solid var(--red);
+      padding-left: 1rem;
+    }
+
+    .terms strong {
+      display: block;
+      font: 700 1.05rem/1.3 var(--display);
+      margin-bottom: .2rem;
+    }
+
+    .terms span {
+      color: var(--muted);
+    }
+
+    .contacts {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1.15rem;
+    }
+
+    .contacts li {
+      padding: .35rem 0;
+    }
+
+    .contacts .k {
+      color: var(--muted);
+      display: inline-block;
+      min-width: 6.5rem;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 2.5rem;
+        gap: 1.5rem;
+      }
+
+      .photo {
+        width: 7.5rem;
+        height: 7.5rem;
+      }
+
+      .req li {
+        grid-template-columns: 1.1rem 1fr;
+      }
+
+      .req .note {
+        grid-column: 2;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<main class="wrap">
+  <main class="wrap">
 
-  <header class="hero">
-    <div class="photo" >
-      <img src="photo.jpg" alt="Михаил" onerror="var p=this.parentNode; this.remove(); p.textContent='М';">
-    </div>
-    <div>
-      <h1>Михаил</h1>
-      <p class="lead">Фронтенд-разработчик. Хочу помочь вашей команде с сайтом.</p>
-    </div>
-    <svg class="track" viewBox="0 0 700 74" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Следы конькового хода на снегу">
-      <path class="ski" d="M14 37 L64 12" style="animation-delay:0ms"/>
-      <circle class="pole" cx="48" cy="64" r="2.5" style="animation-delay:60ms"/>
-      <path class="ski" d="M74 37 L124 62" style="animation-delay:110ms"/>
-      <circle class="pole" cx="108" cy="10" r="2.5" style="animation-delay:170ms"/>
-      <path class="ski" d="M134 37 L184 12" style="animation-delay:220ms"/>
-      <circle class="pole" cx="168" cy="64" r="2.5" style="animation-delay:280ms"/>
-      <path class="ski" d="M194 37 L244 62" style="animation-delay:330ms"/>
-      <circle class="pole" cx="228" cy="10" r="2.5" style="animation-delay:390ms"/>
-      <path class="ski" d="M254 37 L304 12" style="animation-delay:440ms"/>
-      <circle class="pole" cx="288" cy="64" r="2.5" style="animation-delay:500ms"/>
-      <path class="ski" d="M314 37 L364 62" style="animation-delay:550ms"/>
-      <circle class="pole" cx="348" cy="10" r="2.5" style="animation-delay:610ms"/>
-      <path class="ski" d="M374 37 L424 12" style="animation-delay:660ms"/>
-      <circle class="pole" cx="408" cy="64" r="2.5" style="animation-delay:720ms"/>
-      <path class="ski" d="M434 37 L484 62" style="animation-delay:770ms"/>
-      <circle class="pole" cx="468" cy="10" r="2.5" style="animation-delay:830ms"/>
-      <path class="ski" d="M494 37 L544 12" style="animation-delay:880ms"/>
-      <circle class="pole" cx="528" cy="64" r="2.5" style="animation-delay:940ms"/>
-      <path class="ski" d="M554 37 L604 62" style="animation-delay:990ms"/>
-      <circle class="pole" cx="588" cy="10" r="2.5" style="animation-delay:1050ms"/>
-      <path class="ski last" d="M614 37 L664 12" style="animation-delay:1100ms"/>
-      <circle class="pole" cx="648" cy="64" r="2.5" style="animation-delay:1160ms"/>
-    </svg>
-  </header>
+    <header class="hero">
+      <div class="photo">
+        <img src="photo.jpg" alt="Михаил" onerror="var p=this.parentNode; this.remove(); p.textContent='М';">
+      </div>
+      <div>
+        <h1>Михаил</h1>
+        <p class="lead">Фронтенд-разработчик. Хочу помочь вашей команде с сайтом.</p>
+      </div>
+      <svg class="track" viewBox="0 0 700 74" preserveAspectRatio="xMinYMid meet" role="img"
+        aria-label="Следы конькового хода на снегу">
+        <path class="ski" d="M14 37 L64 12" style="animation-delay:0ms" />
+        <circle class="pole" cx="48" cy="64" r="2.5" style="animation-delay:60ms" />
+        <path class="ski" d="M74 37 L124 62" style="animation-delay:110ms" />
+        <circle class="pole" cx="108" cy="10" r="2.5" style="animation-delay:170ms" />
+        <path class="ski" d="M134 37 L184 12" style="animation-delay:220ms" />
+        <circle class="pole" cx="168" cy="64" r="2.5" style="animation-delay:280ms" />
+        <path class="ski" d="M194 37 L244 62" style="animation-delay:330ms" />
+        <circle class="pole" cx="228" cy="10" r="2.5" style="animation-delay:390ms" />
+        <path class="ski" d="M254 37 L304 12" style="animation-delay:440ms" />
+        <circle class="pole" cx="288" cy="64" r="2.5" style="animation-delay:500ms" />
+        <path class="ski" d="M314 37 L364 62" style="animation-delay:550ms" />
+        <circle class="pole" cx="348" cy="10" r="2.5" style="animation-delay:610ms" />
+        <path class="ski" d="M374 37 L424 12" style="animation-delay:660ms" />
+        <circle class="pole" cx="408" cy="64" r="2.5" style="animation-delay:720ms" />
+        <path class="ski" d="M434 37 L484 62" style="animation-delay:770ms" />
+        <circle class="pole" cx="468" cy="10" r="2.5" style="animation-delay:830ms" />
+        <path class="ski" d="M494 37 L544 12" style="animation-delay:880ms" />
+        <circle class="pole" cx="528" cy="64" r="2.5" style="animation-delay:940ms" />
+        <path class="ski" d="M554 37 L604 62" style="animation-delay:990ms" />
+        <circle class="pole" cx="588" cy="10" r="2.5" style="animation-delay:1050ms" />
+        <path class="ski last" d="M614 37 L664 12" style="animation-delay:1100ms" />
+        <circle class="pole" cx="648" cy="64" r="2.5" style="animation-delay:1160ms" />
+      </svg>
+    </header>
 
-  <section>
-    <h2>О себе</h2>
-    <ul class="facts">
-      <li>38 лет</li>
-      <li>Санкт-Петербург, <span class="metro"><span class="metro-m" aria-label="метро">М</span>пр. Ветеранов</span></li>
-      <li>Женат, двое детей</li>
-      <li>Высшее образование</li>
-    </ul>
-    <p>Около 12 лет занимаюсь веб-разработкой. Основная специализация — фронтенд для крупных трейдинговых платформ: сложные интерфейсы, где важны скорость, надёжность и внимание к деталям.</p>
-    <p>Сейчас работаю удалённо на полной ставке и готов выделять вашему проекту около 4 часов в день в гибком графике.</p>
-  </section>
+    <section>
+      <h2>О себе</h2>
+      <ul class="facts">
+        <li>38 лет</li>
+        <li>Санкт-Петербург, <span class="metro"><span class="metro-m" aria-label="метро">М</span>пр. Ветеранов</span>
+        </li>
+        <li>Женат, двое детей</li>
+        <li>Высшее образование</li>
+      </ul>
+      <p>Около 12 лет занимаюсь веб-разработкой. Основная специализация — фронтенд для крупных трейдинговых платформ:
+        сложные интерфейсы, где важны скорость, надёжность и внимание к деталям.</p>
+      <p>Сейчас работаю удалённо и готов выделять вашему проекту около 4 часов в день в гибком графике.</p>
+    </section>
 
-  <section>
-    <h2>Почему пишу вам</h2>
-    <p>Давно на вас подписан — по вашим урокам на YouTube учился коньковому ходу. Был на открытии магазина: ленточку тогда перерезали мои дети.</p>
-    <p>Я не такой серьёзный спортсмен, как ребята из вашей команды, но десятку бегаю, а в сезон стараюсь выбираться на лыжи. Мне нравится ваша спортивная тусовка и то, что вы делаете, поэтому, увидев вакансию, решил предложить помощь с сайтом.</p>
-    <div class="gallery">
-      <figure><img src="ski.jpg" alt="Михаил на лыжной трассе" loading="lazy" width="900" height="1200"><figcaption>На лыжне</figcaption></figure>
-      <figure><img src="run.jpg" alt="Михаил с медалью после забега на 10 км на Дворцовой площади" loading="lazy" width="900" height="1200" style="object-position:50% 20%"><figcaption>PushkinRun, 10 км, 2023</figcaption></figure>
-    </div>
-    <p>Понимаю, что закрываю не все пункты из описания. Но техническую часть могу и хочу взять на себя.</p>
-  </section>
+    <section>
+      <h2>Почему пишу вам</h2>
+      <p>Давно на вас подписан — по вашим урокам на YouTube учился коньковому ходу. Был на открытии магазина: ленточку
+        тогда перерезали мои дети.</p>
+      <p>Я не такой серьёзный спортсмен, как ребята из вашей команды, но десятку бегаю, а в сезон стараюсь выбираться на
+        лыжи. Мне нравится ваша спортивная тусовка и то, что вы делаете, поэтому, увидев вакансию, решил предложить
+        помощь с сайтом.</p>
+      <div class="gallery">
+        <figure><img src="ski.jpg" alt="Михаил на лыжной трассе" loading="lazy" width="900" height="1200">
+          <figcaption>На лыжне</figcaption>
+        </figure>
+        <figure><img src="run.jpg" alt="Михаил с медалью после забега на 10 км на Дворцовой площади" loading="lazy"
+            width="900" height="1200" style="object-position:50% 20%">
+          <figcaption>PushkinRun, 10 км, 2023</figcaption>
+        </figure>
+      </div>
+      <p>Понимаю, что закрываю не все пункты из описания. Но техническую часть могу и хочу взять на себя.</p>
+    </section>
 
-  <section>
-    <h2>По требованиям вакансии</h2>
-    <div class="legend" aria-hidden="true">
-      <span><i class="dot d-strong" style="margin:0"></i>сильная сторона</span>
-      <span><i class="dot d-exp" style="margin:0"></i>есть опыт</span>
-      <span><i class="dot d-learn" style="margin:0"></i>разберусь</span>
-      <span><i class="dot d-weak" style="margin:0"></i>слабое место</span>
-    </div>
-    <ul class="req">
-      <li><i class="dot d-strong" aria-hidden="true"></i><b>HTML и веб-технологии</b><span class="note"><span class="sr">Сильная сторона. </span>Это моя основная работа последние 12 лет.</span></li>
-      <li><i class="dot d-strong" aria-hidden="true"></i><b>Работа с ИИ</b><span class="note"><span class="sr">Сильная сторона. </span>Пользуюсь каждый день: Claude Code и Codex — мои основные инструменты для написания кода. Есть личные платные аккаунты.</span></li>
-      <li><i class="dot d-exp" aria-hidden="true"></i><b>Wildberries</b><span class="note"><span class="sr">Есть опыт. </span>Сам был селлером — до недавнего времени продавал товары из Китая, так что знаю маркетплейс изнутри.</span></li>
-      <li><i class="dot d-learn" aria-hidden="true"></i><b>1С и InSales</b><span class="note"><span class="sr">Разберусь. </span>Напрямую не работал, но уверен, что быстро разберусь — с ИИ-инструментами освоить новую платформу сейчас заметно проще.</span></li>
-      <li><i class="dot d-learn" aria-hidden="true"></i><b>SEO</b><span class="note"><span class="sr">Разберусь. </span>Отдельно этим не занимался, но тема мне интересна, и я с удовольствием в ней прокачаюсь.</span></li>
-      <li><i class="dot d-weak" aria-hidden="true"></i><b>Фото и видео</b><span class="note"><span class="sr">Слабое место. </span>Снимаю на базовом уровне, а монтаж и обработка — точно не моя сильная сторона. Говорю об этом честно сразу.</span></li>
-    </ul>
-  </section>
+    <section>
+      <h2>По требованиям вакансии</h2>
+      <div class="legend" aria-hidden="true">
+        <span><i class="dot d-strong" style="margin:0"></i>сильная сторона</span>
+        <span><i class="dot d-exp" style="margin:0"></i>есть опыт</span>
+        <span><i class="dot d-learn" style="margin:0"></i>разберусь</span>
+        <span><i class="dot d-weak" style="margin:0"></i>слабое место</span>
+      </div>
+      <ul class="req">
+        <li><i class="dot d-strong" aria-hidden="true"></i><b>HTML и веб-технологии</b><span class="note"><span
+              class="sr">Сильная сторона. </span>Это моя основная работа последние 12 лет.</span></li>
+        <li><i class="dot d-strong" aria-hidden="true"></i><b>Работа с ИИ</b><span class="note"><span class="sr">Сильная
+              сторона. </span>Пользуюсь каждый день: Claude Code и Codex — мои основные инструменты для написания кода.
+            Есть личные платные аккаунты.</span></li>
+        <li><i class="dot d-exp" aria-hidden="true"></i><b>Wildberries</b><span class="note"><span class="sr">Есть опыт.
+            </span>Сам был селлером — до недавнего времени продавал товары из Китая, так что знаю маркетплейс
+            изнутри.</span></li>
+        <li><i class="dot d-learn" aria-hidden="true"></i><b>1С и InSales</b><span class="note"><span
+              class="sr">Разберусь. </span>Напрямую не работал, но уверен, что быстро разберусь — с ИИ-инструментами
+            освоить новую платформу сейчас заметно проще.</span></li>
+        <li><i class="dot d-learn" aria-hidden="true"></i><b>SEO</b><span class="note"><span class="sr">Разберусь.
+            </span>Отдельно этим не занимался, но тема мне интересна, и я с удовольствием в ней прокачаюсь.</span></li>
+        <li><i class="dot d-weak" aria-hidden="true"></i><b>Фото и видео</b><span class="note"><span class="sr">Слабое
+              место. </span>Снимаю на базовом уровне, а монтаж и обработка — точно не моя сильная сторона. Говорю об
+            этом честно сразу.</span></li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Ещё коротко</h2>
-    <div class="terms">
-      <div><strong>Образование</strong><span>Высшее, СПбГАСУ, автомобильно-дорожный факультет</span></div>
-      <div><strong>Формат</strong><span>Удалённо, около 4 часов в день, гибкий график</span></div>
-      <div><strong>Характер</strong><span>Позитивный, ответственный, довожу начатое до конца. Без вредных привычек</span></div>
-    </div>
-  </section>
+    <section>
+      <h2>Ещё коротко</h2>
+      <div class="terms">
+        <div><strong>Образование</strong><span>Высшее, СПбГАСУ, автомобильно-дорожный факультет</span></div>
+        <div><strong>Формат</strong><span>Удалённо, около 4 часов в день, гибкий график</span></div>
+        <div><strong>Характер</strong><span>Позитивный, ответственный, довожу начатое до конца. Без вредных
+            привычек</span></div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Контакты</h2>
-    <ul class="contacts">
-      <li><span class="k">Телеграм</span><a href="https://t.me/soulfu1">@soulfu1</a></li>
-      <li><span class="k">Instagram</span><a href="https://instagram.com/soulfu1">@soulfu1</a></li>
-      <li><span class="k">Телефон</span><a href="tel:+79110298022">+7 911 029-80-22</a></li>
-      <li><span class="k">Почта</span><a href="mailto:mihailsmolin@gmail.com">mihailsmolin@gmail.com</a></li>
-    </ul>
-  </section>
+    <section>
+      <h2>Контакты</h2>
+      <ul class="contacts">
+        <li><span class="k">Телеграм</span><a href="https://t.me/soulfu1">@soulfu1</a></li>
+        <li><span class="k">Instagram</span><a href="https://instagram.com/soulfu1">@soulfu1</a></li>
+        <li><span class="k">Телефон</span><a href="tel:+79110298022">+7 911 029-80-22</a></li>
+        <li><span class="k">Почта</span><a href="mailto:mihailsmolin@gmail.com">mihailsmolin@gmail.com</a></li>
+      </ul>
+    </section>
 
-  <footer>Буду рад обсудить, чем могу быть полезен.</footer>
-</main>
-<style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
+    <footer>Буду рад обсудить, чем могу быть полезен.</footer>
+  </main>
+  <style>
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap
+    }
+  </style>
 </body>
+
 </html>
